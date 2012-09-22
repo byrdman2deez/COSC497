@@ -45,6 +45,42 @@ package
 		private function init(e:Event = null):void 
 		{			
 			
+			//draw background objects
+			var block1:BlockO = new BlockO();
+			block1.x = Math.random() * stage.stageWidth;
+			block1.y = Math.random() * stage.stageHeight;
+			addChild(block1);
+			
+			var block2:BlockI = new BlockI();
+			block2.x = Math.random() * stage.stageWidth;
+			block2.y = Math.random() * stage.stageHeight;
+			addChild(block2);
+			
+			var block3:BlockJ = new BlockJ();
+			block3.x = Math.random() * stage.stageWidth;
+			block3.y = Math.random() * stage.stageHeight;
+			addChild(block3);
+			
+			var block4:BlockT = new BlockT();
+			block4.x = Math.random() * stage.stageWidth;
+			block4.y = Math.random() * stage.stageHeight;
+			addChild(block4);
+			
+			var block5:BlockL = new BlockL();
+			block5.x = Math.random() * stage.stageWidth;
+			block5.y = Math.random() * stage.stageHeight;
+			addChild(block5);
+			
+			var block6:BlockS = new BlockS();
+			block6.x = Math.random() * stage.stageWidth;
+			block6.y = Math.random() * stage.stageHeight;
+			addChild(block6);
+			
+			var block7:BlockZ = new BlockZ();
+			block7.x = Math.random() * stage.stageWidth;
+			block7.y = Math.random() * stage.stageHeight;
+			addChild(block7);
+			
 			scoreText = new TextField();
 			scoreText.defaultTextFormat = new TextFormat("Arial", 64, 0x000000);
 			scoreText.text = "Score: " + score;
@@ -54,7 +90,6 @@ package
 			addChild(scoreText);
 			
 			randGen = new RandomGenerator();
-			
 			
 			removeEventListener(Event.ADDED_TO_STAGE, init);
 			nextAppear = threshold * 2;
