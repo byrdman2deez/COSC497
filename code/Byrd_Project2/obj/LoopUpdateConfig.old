@@ -16,16 +16,16 @@
     </define>
     <define append="true">
       <name>CONFIG::timeStamp</name>
-      <value>'9/22/2012'</value>
+      <value>'9/28/2012'</value>
     </define>
     <verbose-stacktraces>true</verbose-stacktraces>
     <source-path append="true">
-      <path-element>C:\Users\Mike\Documents\GitHub\COSC497\code\WhackaDot2\src</path-element>
+      <path-element>C:\Users\MIke\Desktop\Project2\03-7 Loop Update GAME\src</path-element>
       <path-element>C:\Program Files (x86)\FlashDevelop\Library\AS3\classes</path-element>
     </source-path>
   </compiler>
   <file-specs>
-    <path-element>C:\Users\Mike\Documents\GitHub\COSC497\code\WhackaDot2\src\Main.as</path-element>
+    <path-element>C:\Users\MIke\Desktop\Project2\03-7 Loop Update GAME\src\Main.as</path-element>
   </file-specs>
   <default-background-color>#FFFFFF</default-background-color>
   <default-frame-rate>30</default-frame-rate>
