@@ -1,0 +1,38 @@
+PROJECT 4:
+DUE 13/06 by 11:11am (before next class)
+
+In Zombie Dispose Game...
+- Create a ShellState w/ start button, WinState and LoseState 	-DONE
+	- Support moving between states 			-DONE
+- Add support for 3 levels of gameplay 				-DONE
+- Add victory condition for losing, show score			-DONE
+- Add victory condition for winning after 3 levels, show score	-DONE
+- Make console toggle visibility via ~
+	- Output something to the console every time a zombie dies
+
+* Add mouse over support to PureButton (hint: need to track if down is occurring or down gets stomped by over)
+** Add scrolling support to the console, via up/down arrows
+	- Must not effect game while scrolling (if possible)
+*** Create an "IntroState" that Fades in and out a splash screen then automatically goes to the ShellState
+**** Make ~ 3-way toggle: full screen, 1/4 screen worth of lines, not visible
+
+
+
+REQUIRED READING / WATCHING:
+Part 1 of Grant Skinner's "Resource Management" series
+http://gskinner.com/blog/archives/2006/06/as3_resource_ma.html
+
+"Eurogamer Expo 2012: Valve Software's Chet Faliszek"
+http://youtube.com/watch?v=tdwzvdZFxVM
+
+
+
+ADDITIONAL READING:
+JPauclair's Garbage Collector post, "Tamarin part III"
+http://jpauclair.net/2009/12/23/tamarin-part-iii-current-garbage-collector-in-flash-10-0/
+
+"Loop-invariant code motion"
+http://en.wikipedia.org/wiki/Loop-invariant_code_motion
+
+"AS3's system class" (for memory)
+http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/flash/system/System.html
