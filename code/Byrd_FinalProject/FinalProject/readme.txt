@@ -1,0 +1,4 @@
+Michael Byrd
+Final Project Update
+
+	So far I think my game is starting to come together. I managed to get the enemies to move the way i intended them to next I'm going to add the penalties and the door for the player to reach. I spent most of my time studying all of the classes in my engine folder and adding some features that I thought were necessary. For example, I changed up the console, improved the input, and the ButtonPure and makeButton classes. All of these will be used in my game so I wanted to make sure that I could use them the way i wanted to.I plan on Adding the dizzy penalty which will either slow the the player down when he collides with another character or add the screen blur and possibly a few other penalties. The images will come later after i have all the mechanics working.
