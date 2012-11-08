@@ -7,23 +7,31 @@ package
 	 * ...
 	 * @author Mike Byrd
 	 */
-	public class PartyPooper extends Sprite
+	public class PartyPooper extends Sprite implements IDisposable
 	{
-		private var speed:Number = 5;
+		private var speedX:Number = 0;
+		private var speedY:Number = 0;
 		private var target:Sprite;	
 		private var direction:uint;
 		private var dirx	: Number = 0;
 		private var diry	: Number = 0
 		private var isDisposed:Boolean = false;
+		private var collided:Boolean = false;
+		
+		private var debuffStartTime:Number = 0;
+		private var maxDebuffTime:Number = 3000;
+		private var debuffEndTime:Number = 0;
+		private var debuffed:Boolean = false;
 		
 		public function PartyPooper(target:Sprite) 
 		{
 			var g:Graphics = this.graphics;	
 			g.beginFill( 0xff0000 );
 			g.drawRect(0, 0, 20, 30);
-			g.endFill();		
+			g.endFill();				
 			
 			this.target = target;
+			
 			var degrees:Number = Math.random() * 360;
 			
 			// First convert "degrees" to radians
@@ -49,44 +57,50 @@ package
 			{
 				direction = Direction.DOWN;
 			}
-			trace(direction);
 		}
 		
 		public function update():void 
 		{
-			
-			switch (direction) 
+			if (speedX == 0) 
 			{
-				case Direction.RIGHT:
-					this.x += speed;
-					break;
-				case Direction.LEFT:
-					this.x -= speed;
-					break;
-				case Direction.UP:
-					this.y -= speed;
-					break;
-				case Direction.DOWN:
-					this.y += speed;
-					break;
-				default:
+				speedX = Random.getNumberBetween(-6, 6);	
+			}
+			else if (speedY == 0) 
+			{
+				speedY = Random.getNumberBetween(-6, 6);
 			}
 			
-			if ( x < 0 )
+			this.x += speedX;	
+			this.y += speedY;
+			
+			if ( x < 0 - width )
 				x += Display.width;
 			
 			if ( x > Display.width )
 				x -= Display.width;
 				
-			if ( y < 0 )
+			if ( y < 0 - height )
 				y += Display.height;
 				
 			if ( y > Display.height )
 				y -= Display.height;
 			
 			if (CheckCollision(target)) 
+			{				
+				//Global.gameOver = true;
+				if (!collided) 
+				{
+					var player:Player = target as Player;
+					player.Speed *= 0.5;
+					debuffStartTime = Time.elapsedTime;				
+					player.HitCount++;
+					collided = true;
+					trace(player.Speed);
+				}				
+			}
+			else 
 			{
-				trace("Collided!");
+				collided = false;
 			}
 		}
 		

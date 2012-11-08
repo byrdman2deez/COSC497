@@ -4,7 +4,6 @@ package engine
 	import flash.events.Event;
 	import flash.utils.getTimer;
 	import flash.utils.Timer;
-
 	
 	public class Time 
 	{
@@ -19,7 +18,9 @@ package engine
 		
 		/// Time in seconds since the last frame passed.
 		static public function get deltaTime()	:Number { return _deltaTime; }
-	
+		
+		///Time in milliseconds since the game started.
+		static public function get elapsedTime():Number { return now; } 
 		
 		/// Initialize sub-system
 		static public function init( stage:Stage ):void

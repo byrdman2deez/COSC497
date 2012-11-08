@@ -16,17 +16,18 @@
     </define>
     <define append="true">
       <name>CONFIG::timeStamp</name>
-      <value>'11/3/2012'</value>
+      <value>'11/7/2012'</value>
     </define>
     <verbose-stacktraces>true</verbose-stacktraces>
     <source-path append="true">
-      <path-element>C:\Users\MIke\Desktop\FinalProject\FinalProject\src</path-element>
-      <path-element>C:\Users\MIke\Desktop\MyEngine\Source</path-element>
+      <path-element>C:\Users\Mike\Desktop\FinalProject\src</path-element>
+      <path-element>C:\Users\Mike\Desktop\Box2DEngine\as3IsoLib\src</path-element>
+      <path-element>C:\Users\Mike\Desktop\MyEngine\Source</path-element>
       <path-element>C:\Program Files (x86)\FlashDevelop\Library\AS3\classes</path-element>
     </source-path>
   </compiler>
   <file-specs>
-    <path-element>C:\Users\MIke\Desktop\FinalProject\FinalProject\src\Main.as</path-element>
+    <path-element>C:\Users\Mike\Desktop\FinalProject\src\Main.as</path-element>
   </file-specs>
   <default-background-color>#222222</default-background-color>
   <default-frame-rate>30</default-frame-rate>

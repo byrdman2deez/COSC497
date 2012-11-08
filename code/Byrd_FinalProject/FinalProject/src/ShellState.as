@@ -1,6 +1,5 @@
 package  
 {
-	import engine.IState;
 	import engine.*;
 	import flash.display.Sprite;
 	import flash.text.TextField;
@@ -15,16 +14,20 @@ package
 		
 		public function start():void 
 		{
+			Global.gameOver = false;
+			Global.level = 1;
+			
 			var tf:TextField = maketf();
 			
-			tf.text = "Restroom Rendezvous";
-			Display.ui.addChild(tf);
+			tf.text = "Dizzy Dash";
+			Display.main.addChild(tf);
 			center(tf);
-			tf.y = 50;
-			
+			tf.y = 150;
+						
 			var btn:Sprite = makeButton("Start", onStart);
-			Display.ui.addChild(btn);
+			Display.main.addChild(btn);
 			center(btn);
+			btn.y = 250;
 		}
 		
 		private function onStart(btn:ButtonPure):void 

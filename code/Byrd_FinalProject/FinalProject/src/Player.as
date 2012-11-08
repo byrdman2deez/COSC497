@@ -1,6 +1,7 @@
 
 package  
 {
+	import as3isolib.enum.RenderStyleType;
 	import engine.*;
 	import flash.display.Graphics;
 	import flash.display.Sprite;
@@ -10,7 +11,14 @@ package
 
 	public class Player extends Sprite
 	{
-		private const SPEED:int = 70;		
+		private var speed:Number = 100;		
+		private var hitCount:Number = 0;
+		
+		public function get Speed():Number { return speed; }
+		public function set Speed(speed:Number):void { this.speed = speed; }
+		
+		public function get HitCount():Number { return hitCount; } 
+		public function set HitCount(hitCount:Number):void { this.hitCount = hitCount }
 		
 		public function Player() 
 		{
@@ -24,14 +32,34 @@ package
 		public function update():void
 		{			
 			if ( Input.getKeyHeld( Keyboard.S ) || Input.getKeyHeld( Keyboard.DOWN ) )
-				this.y += SPEED * Time.deltaTime;
+				this.y += speed * Time.deltaTime;
 			if ( Input.getKeyHeld( Keyboard.W ) || Input.getKeyHeld( Keyboard.UP ) )
-				this.y -= SPEED * Time.deltaTime;
+				this.y -= speed * Time.deltaTime;
 				
 			if ( Input.getKeyHeld( Keyboard.D ) || Input.getKeyHeld( Keyboard.RIGHT ) )
-				this.x += SPEED * Time.deltaTime;
+				this.x += speed * Time.deltaTime;
 			if ( Input.getKeyHeld( Keyboard.A ) || Input.getKeyHeld( Keyboard.LEFT) )
-				this.x -= SPEED * Time.deltaTime;
+				this.x -= speed * Time.deltaTime;			
+				
+			if (hitCount >= 3) 
+			{
+				Global.gameOver = true;
+			}
+		}
+		
+		public function CheckCollision(sprite:Sprite):Boolean 
+		{
+			const MIN_COLLISION_CHECK_PIXELS:int = 64;
+			
+			if ( Math.abs( this.x - sprite.x ) < MIN_COLLISION_CHECK_PIXELS ||
+				 Math.abs( this.y - sprite.y ) < MIN_COLLISION_CHECK_PIXELS )
+			{
+				if (this.hitTestObject( sprite )) 
+				{
+					return true;
+				}
+			}
+			return false;
 		}
 	}
 
