@@ -92,10 +92,10 @@ package
 				{
 					var player:Player = target as Player;
 					player.Speed *= 0.5;
-					debuffStartTime = Time.elapsedTime;				
+					//debuffStartTime = Time.elapsedTime;	
+					Global.console.add("Speed reduced by 50%...");
 					player.HitCount++;
 					collided = true;
-					trace(player.Speed);
 				}				
 			}
 			else 

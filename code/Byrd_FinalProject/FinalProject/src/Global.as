@@ -1,5 +1,6 @@
 package  
 {
+	import engine.*;;
 	/**
 	 * ...
 	 * @author Mike Byrd
@@ -8,6 +9,7 @@ package
 	{
 		public static var gameOver:Boolean = false;
 		public static var level:uint = 0;
+		public static var console:Console = Console.getInstance();
 	}
 
 }

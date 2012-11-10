@@ -17,6 +17,7 @@ package engine
 			return _instance;
 		}
 		
+		
 		public function get max():int { return MAX; }
 		
 		/// Text fields used to display content
@@ -52,6 +53,7 @@ package engine
 			}
 		}
 		
+		///creates new textfields for the console
 		public function clear():void
 		{
 			// Allocate memory
@@ -71,13 +73,14 @@ package engine
 			realize();
 		}
 		
-		/// Add a line of text
+		/// Add a line of text to the console
 		public function add( text:String ):void
 		{
 			history.push( text );
 			realize();
 		}
 		
+		///sets all text in the console to an empty string
 		public function clearHistory():void 
 		{
 			for (var i:int = history.length - 1; i > -1; i--) 

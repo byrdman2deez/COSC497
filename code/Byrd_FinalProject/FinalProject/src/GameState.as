@@ -22,7 +22,7 @@ package
 		public function start():void 
 		{
 			gameStartTime = Time.elapsedTime;
-			spawnTime = gameStartTime + 3000;
+			spawnTime = gameStartTime + 1200;
 			
 			//add player
 			player = new Player();
@@ -35,6 +35,8 @@ package
 			Display.ui.addChild(exit);
 			center(exit);
 			exit.y = 0;
+			
+			Global.console.clear();
 			
 			partyPoopers = new Vector.<PartyPooper>();
 		}
