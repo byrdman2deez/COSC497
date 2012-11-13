@@ -10,22 +10,18 @@ package
 	public class NextLevelState implements IState
 	{
 		
-		public function NextLevelState() 
-		{
-			
-		}
-		
+		public function NextLevelState() { }
+				
 		public function start():void 
 		{
 			Global.level++;
-			trace(Global.level);
 			
 			var tf:TextField;
 			tf = maketf();
 			tf.text = "You made it!";
 			Display.ui.addChild(tf);
 			center(tf);
-			tf.y -= 200;
+			tf.y -= 100;
 			
 			var btn:Sprite;
 			btn = makeButton("Next Level", onNextLevel);

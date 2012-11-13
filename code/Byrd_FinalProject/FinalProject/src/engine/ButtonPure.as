@@ -14,14 +14,16 @@ package engine
 		private var down:Sprite;
 		private var over:Sprite;
 		private var callBack:Function;
+		private var clickSound:Class;
 		
 		/// CTOR
-		public function ButtonPure( text:String, callBack:Function, upColor:uint, downColor:uint, overColor:uint) 
+		public function ButtonPure( text:String, callBack:Function, clickSound:Class, upColor:uint, downColor:uint, overColor:uint ) 
 		{
 			const WIDTH	:int = 300;
 			const HEIGHT:int = 50;
 			
 			this.callBack = callBack;
+			this.clickSound = clickSound;
 			
 			up 		= makeButtonState( text, upColor, WIDTH, HEIGHT );			
 			over 	= makeButtonState(text, overColor, WIDTH, HEIGHT);
@@ -51,6 +53,9 @@ package engine
 		{
 			removeChildren();
 			addChild(down);
+			
+			if (clickSound != null)
+				Systems.sound.play(clickSound);
 		}
 		private function onOut(e:MouseEvent):void 
 		{

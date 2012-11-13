@@ -7,9 +7,9 @@ package engine
 	import flash.text.TextField;
 	
 	
-	public function makeButton( text:String, callback:Function, upColor:uint = 0x0000ff, downColor:uint = 0xff0000, overColor:uint = 0x00ff00 ) :Sprite
+	public function makeButton( text:String, callback:Function, clickSound:Class = null, upColor:uint = 0x0000ff, downColor:uint = 0xff0000, overColor:uint = 0x00ff00 ) :Sprite
 	{
-		var bp:ButtonPure = new ButtonPure( text, callback, upColor, downColor, overColor);
+		var bp:ButtonPure = new ButtonPure( text, callback, clickSound, upColor, downColor, overColor);
 		return bp;
 	}
 }

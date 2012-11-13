@@ -1,5 +1,6 @@
 package engine
 {
+	import flash.text.AntiAliasType;
 	import flash.text.TextField;
 	import flash.text.TextFieldAutoSize;
 	import flash.text.TextFormat;
@@ -10,14 +11,14 @@ package engine
 	public function maketf( size:int = 64 ):TextField
 	{
 		var tf:TextField = new TextField();			
-		tf.defaultTextFormat 		= new TextFormat("Arial", size, 0xffffff, true );
+		tf.defaultTextFormat 		= new TextFormat("MainFont", size, 0xffffff, true );
+		tf.antiAliasType = AntiAliasType.ADVANCED;
 		tf.defaultTextFormat.align 	= TextFormatAlign.CENTER;
 		
-		tf.embedFonts   = false;
+		tf.embedFonts   = true;
 		tf.autoSize 	= TextFieldAutoSize.LEFT;
 		tf.y 			= size * 0.5;
-		tf.mouseEnabled = false;
-		
+		tf.mouseEnabled = false;		
 		return tf;
 	}
 }

@@ -20,7 +20,7 @@ package
 			center(tf);
 			tf.y = 200;
 			
-			var btn:Sprite = makeButton("Main Menu", onMainMenu);
+			var btn:Sprite = makeButton("Main Menu", onMainMenu, Resources.Select);
 			Display.ui.addChild(btn);
 			center(btn);			
 		}

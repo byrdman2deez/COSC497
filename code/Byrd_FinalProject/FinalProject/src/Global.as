@@ -1,6 +1,6 @@
 package  
 {
-	import engine.*;;
+	import engine.Console;
 	/**
 	 * ...
 	 * @author Mike Byrd
@@ -9,6 +9,7 @@ package
 	{
 		public static var gameOver:Boolean = false;
 		public static var level:uint = 0;
+		public static var multiplier:int = 1;
 		public static var console:Console = Console.getInstance();
 	}
 

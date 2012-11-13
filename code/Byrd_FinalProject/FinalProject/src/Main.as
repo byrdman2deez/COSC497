@@ -22,7 +22,8 @@ package
 			removeEventListener(Event.ADDED_TO_STAGE, init);
 			// entry point
 			
-			Systems.init(stage);			
+			Resources.init();
+			Systems.init(stage);				
 			
 			State.current = new ShellState();
 			addEventListener(Event.ENTER_FRAME, update);
